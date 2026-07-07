@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>System Design Primer 一個月面試讀書計劃</title>
-  <meta name="description" content="給面試準備者的 System Design 一個月讀書計劃，含延伸閱讀、AI/vibe coding、小 project 與 mock interview。" />
+  <meta name="description" content="給面試準備者的 System Design 一個月讀書計劃，含延伸閱讀、AI/vibe coding、小 project、trade-off 練習與設計文件寫作指南。" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,9 +15,10 @@
       <div class="nav-links">
         <a href="#overview">總覽</a>
         <a href="#weeks">四週計劃</a>
-        <a href="#projects">小 Project</a>
+        <a href="#tradeoffs">Trade-off</a>
+        <a href="#documents">文件</a>
+        <a href="#projects">Project</a>
         <a href="#resources">資源</a>
-        <a href="#checklist">檢核</a>
       </div>
     </nav>
     <section class="hero-content">
@@ -26,7 +27,7 @@
       <p>用 30 天建立 system design 基本語言、練習常見題目、加入 AI / vibe coding 驗證流程，並完成可展示的小 project。</p>
       <div class="hero-actions">
         <a class="btn primary" href="#weeks">開始讀書計劃</a>
-        <a class="btn secondary" href="#projects">查看每週 Project</a>
+        <a class="btn secondary" href="#tradeoffs">練習 Trade-off</a>
       </div>
       <div class="hero-stats">
         <div><strong>30</strong><span>天</span></div>
@@ -41,7 +42,7 @@
       <div class="section-heading">
         <span class="tag">Overview</span>
         <h2>學習目標與原則</h2>
-        <p>這份計劃不要求把 System Design Primer 全部讀完，而是把面試最常用的基礎元件與回答流程練到能說出口。</p>
+        <p>這份計劃不要求把 System Design Primer 全部讀完，而是把面試最常用的基礎元件、回答流程、trade-off 判斷與文件化能力練到能說出口。</p>
       </div>
       <div class="grid cards-3">
         <article class="card"><h3>一個月後的目標</h3><p>能在 30–45 分鐘內拆解一題簡單 system design 題目，畫出高階架構，說出基本 trade-off。</p></article>
@@ -62,14 +63,14 @@
       <div class="section-heading">
         <span class="tag">AI / Vibe Coding</span>
         <h2>AI 時代的補充能力</h2>
-        <p>AI / vibe coding 是加速學習與原型開發的工具，不是取代 system design 基礎。</p>
+        <p>AI / vibe coding 是加速學習與原型開發的工具，不是取代 system design 基礎。工程師最大的價值，會越來越集中在需求釐清、判斷 trade-off、驗證 AI 產物與把決策寫清楚。</p>
       </div>
       <div class="grid cards-5">
         <article class="mini-card"><h3>Prompt decomposition</h3><p>把「做一個服務」拆成需求、API、資料模型、測試、部署步驟。</p></article>
         <article class="mini-card"><h3>Context management</h3><p>整理 README、API spec、schema、測試結果，讓 AI 能理解上下文。</p></article>
         <article class="mini-card"><h3>Verification loop</h3><p>AI 產生後要人工讀 code、跑測試、檢查安全與可維護性。</p></article>
-        <article class="mini-card"><h3>Code review with AI</h3><p>請 AI 找 race condition、missing index、cache invalidation、retry/idempotency。</p></article>
-        <article class="mini-card"><h3>AI security basics</h3><p>認識 prompt injection、資料外洩、secret handling、權限邊界與不可信輸出。</p></article>
+        <article class="mini-card"><h3>Trade-off judgment</h3><p>對 AI 給出的多個方案，判斷成本、風險、時程、可靠性與可維護性。</p></article>
+        <article class="mini-card"><h3>Decision documentation</h3><p>把為什麼選 A 不選 B 寫成 PRD、ADR、Design Doc 或 RFC。</p></article>
       </div>
     </section>
 
@@ -80,6 +81,24 @@
         <p>點擊週次可以展開/收合。每天都有 repo 閱讀、英文延伸閱讀、AI 補充與練習產出。</p>
       </div>
       <div class="accordion" id="weekAccordion"></div>
+    </section>
+
+    <section class="section" id="tradeoffs">
+      <div class="section-heading">
+        <span class="tag">Trade-off Practice</span>
+        <h2>架構選擇練習題</h2>
+        <p>在 AI 能快速產生程式碼的時代，面試準備者要練的是：面對多個可行方案時，能說清楚限制、取捨、風險與決策理由。</p>
+      </div>
+      <div class="tradeoff-grid" id="tradeoffGrid"></div>
+    </section>
+
+    <section class="section" id="documents">
+      <div class="section-heading">
+        <span class="tag">Documentation</span>
+        <h2>常見設計文件與寫作方式</h2>
+        <p>PRD、ADR、Design Doc、RFC 等文件的目的不同。好的工程師要能根據決策階段選擇合適文件，讓團隊對齊「要做什麼、為什麼做、怎麼做、為什麼這樣做」。</p>
+      </div>
+      <div class="doc-grid" id="docGrid"></div>
     </section>
 
     <section class="section" id="projects">
