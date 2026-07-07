@@ -1,0 +1,14 @@
+{
+  "name": "system-design-study-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A static study plan site for system design interview preparation.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'Static site: no build step required'"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
