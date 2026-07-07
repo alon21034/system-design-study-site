@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Design Primer 一個月面試讀書計劃</title>
+  <meta name="description" content="給面試準備者的 System Design 一個月讀書計劃，含延伸閱讀、AI/vibe coding、小 project 與 mock interview。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top">System Design Plan</a>
+      <button class="menu-toggle" aria-label="開啟選單">☰</button>
+      <div class="nav-links">
+        <a href="#overview">總覽</a>
+        <a href="#weeks">四週計劃</a>
+        <a href="#projects">小 Project</a>
+        <a href="#resources">資源</a>
+        <a href="#checklist">檢核</a>
+      </div>
+    </nav>
+    <section class="hero-content">
+      <div class="eyebrow">給面試準備者的入門導向學習安排</div>
+      <h1>System Design Primer 一個月面試讀書計劃</h1>
+      <p>用 30 天建立 system design 基本語言、練習常見題目、加入 AI / vibe coding 驗證流程，並完成可展示的小 project。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#weeks">開始讀書計劃</a>
+        <a class="btn secondary" href="#projects">查看每週 Project</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>30</strong><span>天</span></div>
+        <div><strong>4</strong><span>週 Project</span></div>
+        <div><strong>5</strong><span>核心題型</span></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="section-heading">
+        <span class="tag">Overview</span>
+        <h2>學習目標與原則</h2>
+        <p>這份計劃不要求把 System Design Primer 全部讀完，而是把面試最常用的基礎元件與回答流程練到能說出口。</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card"><h3>一個月後的目標</h3><p>能在 30–45 分鐘內拆解一題簡單 system design 題目，畫出高階架構，說出基本 trade-off。</p></article>
+        <article class="card"><h3>每日節奏</h3><p>讀 repo 30–40 分鐘、延伸閱讀 15–20 分鐘、寫筆記或畫圖 20 分鐘、小練習 20–40 分鐘。</p></article>
+        <article class="card"><h3>AI 使用方式</h3><p>可以用 AI 加速原型、測試與 review，但要保留 prompt log、人工驗證與設計取捨。</p></article>
+      </div>
+      <div class="note-box">
+        <h3>每日筆記模板</h3>
+        <pre><code>今天主題：
+我學到的 3 個概念：
+我不懂的 1 個問題：
+這個概念在面試中怎麼講：
+我今天讓 AI 幫了什麼？我人工驗證了什麼？</code></pre>
+      </div>
+    </section>
+
+    <section class="section ai-section" id="ai">
+      <div class="section-heading">
+        <span class="tag">AI / Vibe Coding</span>
+        <h2>AI 時代的補充能力</h2>
+        <p>AI / vibe coding 是加速學習與原型開發的工具，不是取代 system design 基礎。</p>
+      </div>
+      <div class="grid cards-5">
+        <article class="mini-card"><h3>Prompt decomposition</h3><p>把「做一個服務」拆成需求、API、資料模型、測試、部署步驟。</p></article>
+        <article class="mini-card"><h3>Context management</h3><p>整理 README、API spec、schema、測試結果，讓 AI 能理解上下文。</p></article>
+        <article class="mini-card"><h3>Verification loop</h3><p>AI 產生後要人工讀 code、跑測試、檢查安全與可維護性。</p></article>
+        <article class="mini-card"><h3>Code review with AI</h3><p>請 AI 找 race condition、missing index、cache invalidation、retry/idempotency。</p></article>
+        <article class="mini-card"><h3>AI security basics</h3><p>認識 prompt injection、資料外洩、secret handling、權限邊界與不可信輸出。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="weeks">
+      <div class="section-heading">
+        <span class="tag">30-Day Plan</span>
+        <h2>四週讀書計劃</h2>
+        <p>點擊週次可以展開/收合。每天都有 repo 閱讀、英文延伸閱讀、AI 補充與練習產出。</p>
+      </div>
+      <div class="accordion" id="weekAccordion"></div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <span class="tag">Projects</span>
+        <h2>每週小 Project</h2>
+        <p>每週都把抽象概念落到 API、DB schema、queue/cache、測試與 README。</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-heading"><span class="tag">Checklist</span><h2>一個月後應達到的標準</h2></div>
+      <div class="checklist" id="finalChecklist"></div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="section-heading">
+        <span class="tag">Resources</span>
+        <h2>參考資源與延伸閱讀</h2>
+        <p>以英文資源為主，適合搭配每天主題挑選閱讀。</p>
+      </div>
+      <div class="resource-list" id="resourceList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Based on donnemartin/system-design-primer. Built as a static learning site for interview preparation.</p>
+    <a href="#top">回到頂部 ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
