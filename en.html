@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One-Month System Design and LeetCode Interview Plan</title>
+  <meta name="description" content="A one-month interview preparation plan covering system design, LeetCode patterns, trade-off thinking, AI review, documentation, and further study topics." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/extra.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top">Interview Study Plan</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#system-design">System Design</a>
+        <a href="#leetcode">LeetCode</a>
+        <a href="#docs">Docs</a>
+        <a href="#further">Further Study</a>
+      </div>
+    </nav>
+    <section class="hero-content">
+      <div class="eyebrow">Beginner-friendly interview preparation roadmap</div>
+      <h1>One-Month System Design and LeetCode Interview Plan</h1>
+      <p>Build system design vocabulary, practice coding interview patterns, learn to explain trade-offs, and use AI as a review partner rather than a shortcut.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#system-design">Start System Design</a>
+        <a class="btn secondary" href="#leetcode">Start LeetCode</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>30</strong><span>days</span></div>
+        <div><strong>4</strong><span>mini projects</span></div>
+        <div><strong>100</strong><span>coding problems</span></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="section-heading">
+        <span class="tag">Overview</span>
+        <h2>What this plan is for</h2>
+        <p>This plan is designed for interview candidates who need practical foundations, not a deep distributed-systems course. The goal is to build a clear answer structure, recognize coding patterns, and explain engineering trade-offs.</p>
+      </div>
+      <div class="grid cards-3">
+        <article class="card"><h3>System design goal</h3><p>Within 30–45 minutes, clarify requirements, draw a high-level design, define APIs and data models, and explain 2–3 meaningful trade-offs.</p></article>
+        <article class="card"><h3>Coding goal</h3><p>Practice 3–5 easy-to-medium problems per day, grouped by pattern, and review correctness, complexity, style, edge cases, and communication.</p></article>
+        <article class="card"><h3>AI usage rule</h3><p>Use AI to review, challenge, and ask questions. Do not use AI to immediately generate final answers before you have tried the problem yourself.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="system-design">
+      <div class="section-heading">
+        <span class="tag">System Design</span>
+        <h2>Four-week system design plan</h2>
+        <p>Read selected parts of System Design Primer, then practice explaining architecture choices and trade-offs.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card"><div class="week">Week 1</div><h3>Core vocabulary</h3><p>Scalability, latency, throughput, availability, consistency, CAP, DNS, CDN, load balancers, and reverse proxies.</p><h4>Thinking questions</h4><ul><li>When should a small service stay monolithic instead of being split into services?</li><li>Should you add a cache, a read replica, or a load balancer first? What signal justifies each option?</li><li>Where would CDN caching help, and where could it create freshness problems?</li></ul></article>
+        <article class="project-card"><div class="week">Week 2</div><h3>Data layer, cache, and async processing</h3><p>RDBMS, replication, federation, sharding, SQL vs NoSQL, cache update patterns, queues, workers, retries, and idempotency.</p><h4>Thinking questions</h4><ul><li>What makes a good shard key?</li><li>When is SQL safer than NoSQL despite scaling concerns?</li><li>Should image processing happen synchronously or through a queue?</li></ul></article>
+        <article class="project-card"><div class="week">Week 3</div><h3>Interview problem practice</h3><p>Practice URL shortener, news feed, web crawler, LRU cache, and basic object-oriented design questions.</p><h4>Thinking questions</h4><ul><li>For a URL shortener, should short codes be random or generated from an incremental ID?</li><li>For a feed system, when would you choose fanout-on-write, fanout-on-read, or a hybrid design?</li><li>For a crawler, how do you balance freshness, coverage, and politeness?</li></ul></article>
+        <article class="project-card"><div class="week">Week 4</div><h3>Mock interviews and reinforcement</h3><p>Practice full 45-minute mocks, back-of-the-envelope estimation, real-world architecture reading, communication, security, and AI security basics.</p><h4>Thinking questions</h4><ul><li>Which three decisions in your final design matter the most?</li><li>What would you remove if cost became the top constraint?</li><li>Which decision would deserve an ADR?</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading"><span class="tag">Projects</span><h2>Weekly mini projects</h2></div>
+      <div class="project-grid">
+        <article class="project-card"><div class="week">Week 1</div><h3>Mini URL Shortener</h3><p>Build APIs for creating and resolving short URLs. Include schema, collision handling, tests, and a short README.</p></article>
+        <article class="project-card"><div class="week">Week 2</div><h3>Image Upload + Async Worker</h3><p>Model upload metadata, queue background thumbnail generation, track status, and handle retries/idempotency.</p></article>
+        <article class="project-card"><div class="week">Week 3</div><h3>Mini Feed / Timeline</h3><p>Implement follow, post, and timeline APIs. Compare fanout-on-read and fanout-on-write.</p></article>
+        <article class="project-card"><div class="week">Week 4</div><h3>Final Capstone</h3><p>Choose one project and polish it into a portfolio artifact with README, API spec, architecture diagram, tests, trade-offs, and AI review notes.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="leetcode">
+      <div class="section-heading">
+        <span class="tag">LeetCode</span>
+        <h2>One-month coding interview plan</h2>
+        <p>Practice 3–5 easy-to-medium problems per day. The focus is pattern recognition, correctness, edge cases, complexity, and interview communication.</p>
+      </div>
+      <div class="leetcode-plan">
+        <article class="leetcode-day"><div class="leetcode-day-head"><span>Days 1–7</span><h3>Arrays, Hash Maps, Two Pointers, Sliding Window, Stack</h3></div><p>Practice frequency maps, sets, prefix sums, two pointers, sliding windows, and stack patterns.</p><ul><li>Two Sum, Contains Duplicate, Valid Anagram, Group Anagrams</li><li>Product of Array Except Self, 3Sum, Container With Most Water</li><li>Longest Substring Without Repeating Characters, Min Stack, Daily Temperatures</li></ul></article>
+        <article class="leetcode-day"><div class="leetcode-day-head"><span>Days 8–14</span><h3>Binary Search, Linked List, Intervals, Matrix</h3></div><p>Practice search invariants, dummy nodes, fast/slow pointers, sorted interval merging, and matrix traversal.</p><ul><li>Search in Rotated Sorted Array, Koko Eating Bananas</li><li>Reverse Linked List, Remove Nth Node From End of List, Reorder List</li><li>Merge Intervals, Insert Interval, Spiral Matrix, Rotate Image</li></ul></article>
+        <article class="leetcode-day"><div class="leetcode-day-head"><span>Days 15–21</span><h3>Trees, Heap, Backtracking, Trie</h3></div><p>Practice recursion, tree traversal, BST invariants, priority queues, decision trees, and prefix lookups.</p><ul><li>Maximum Depth, Diameter, Level Order, Validate BST</li><li>Kth Largest Element, K Closest Points</li><li>Subsets, Combination Sum, Permutations, Implement Trie</li></ul></article>
+        <article class="leetcode-day"><div class="leetcode-day-head"><span>Days 22–30</span><h3>Graphs, Greedy, Dynamic Programming, Bit Manipulation, Mixed Mocks</h3></div><p>Practice BFS/DFS, topological sort, greedy reasoning, state transitions, and timed mixed interviews.</p><ul><li>Number of Islands, Clone Graph, Course Schedule</li><li>Maximum Subarray, Jump Game, Coin Change, House Robber</li><li>Longest Common Subsequence, Counting Bits, mixed mock sets</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="teaching-resources">
+      <div class="section-heading"><span class="tag">Teaching Resources</span><h2>Topic-level learning resources</h2><p>These are teaching-oriented resources, not just problem lists.</p></div>
+      <div class="teaching-grid">
+        <article class="teaching-card"><h3>Algorithmic thinking and complexity</h3><p>Start with MIT 6.006 Lecture 1 and Big-O basics.</p><ul class="link-list"><li><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/lecture-1-algorithmic-thinking-peak-finding/" target="_blank" rel="noopener noreferrer">MIT 6.006 Lecture 1: Algorithmic Thinking ↗</a></li><li><a href="https://www.bigocheatsheet.com/" target="_blank" rel="noopener noreferrer">Big-O Cheat Sheet ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Linked lists and invariants</h3><p>Study CS61B Lists2/Lists3 for sentinel nodes, invariants, linked lists, and arrays.</p><ul class="link-list"><li><a href="https://sp21.datastructur.es/materials/lectures/lec4/lec4" target="_blank" rel="noopener noreferrer">CS61B Lecture 4: Lists2 ↗</a></li><li><a href="https://sp21.datastructur.es/materials/lectures/lec5/lec5" target="_blank" rel="noopener noreferrer">CS61B Lecture 5: Lists3 ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Hashing and rolling hash</h3><p>Use MIT 6.006 Lecture 9 for table doubling and Karp-Rabin.</p><ul class="link-list"><li><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/lecture-9-table-doubling-karp-rabin/" target="_blank" rel="noopener noreferrer">MIT 6.006 Lecture 9 ↗</a></li><li><a href="https://cp-algorithms.com/string/string-hashing.html" target="_blank" rel="noopener noreferrer">CP-Algorithms: String Hashing ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Binary search</h3><p>Learn lower/upper bounds, overflow-safe midpoint, and monotonic predicates.</p><ul class="link-list"><li><a href="https://cp-algorithms.com/num_methods/binary_search.html" target="_blank" rel="noopener noreferrer">CP-Algorithms: Binary Search ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Heaps and priority queues</h3><p>Use MIT 6.006 Lecture 4 for heaps, priority queues, and heapsort.</p><ul class="link-list"><li><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/lecture-4-heaps-and-heap-sort/" target="_blank" rel="noopener noreferrer">MIT 6.006 Lecture 4 ↗</a></li><li><a href="https://visualgo.net/en/heap" target="_blank" rel="noopener noreferrer">VisuAlgo: Binary Heap ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Trees and graph traversal</h3><p>Study BST invariants, traversals, BFS, DFS, visited sets, and graph representation.</p><ul class="link-list"><li><a href="https://sp21.datastructur.es/materials/lectures/lec16/lec16" target="_blank" rel="noopener noreferrer">CS61B: BST Study Guide ↗</a></li><li><a href="https://sp21.datastructur.es/materials/lectures/lec23/lec23" target="_blank" rel="noopener noreferrer">CS61B: Trees and Graph Traversals ↗</a></li><li><a href="https://cp-algorithms.com/graph/breadth-first-search.html" target="_blank" rel="noopener noreferrer">CP-Algorithms: BFS ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Topological sort and DSU</h3><p>Learn dependency ordering and dynamic connectivity patterns.</p><ul class="link-list"><li><a href="https://cp-algorithms.com/graph/topological-sort.html" target="_blank" rel="noopener noreferrer">CP-Algorithms: Topological Sorting ↗</a></li><li><a href="https://sp21.datastructur.es/materials/lectures/lec14/lec14" target="_blank" rel="noopener noreferrer">CS61B: Disjoint Sets ↗</a></li></ul></article>
+        <article class="teaching-card"><h3>Dynamic programming</h3><p>Study state definition, transitions, base cases, memoization, and tabulation.</p><ul class="link-list"><li><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/lecture-19-dynamic-programming-i-fibonacci-shortest-paths/" target="_blank" rel="noopener noreferrer">MIT 6.006 Lecture 19 ↗</a></li><li><a href="https://cp-algorithms.com/dynamic_programming/intro-to-dp.html" target="_blank" rel="noopener noreferrer">CP-Algorithms: Intro to DP ↗</a></li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="ai-review">
+      <div class="section-heading"><span class="tag">AI Review Prompt</span><h2>Prompt template for LeetCode review</h2><p>Use this after you solve a problem. It asks AI to guide you with questions instead of immediately giving a full answer.</p></div>
+      <div class="prompt-card"><textarea readonly>You are a strict but constructive coding interview coach.
+
+Please review my LeetCode solution using a Socratic review style. Do not immediately give me the full optimal solution.
+
+Problem name: <paste problem name and link>
+Difficulty: <Easy / Medium>
+Language: <Python / JavaScript / Go / Java ...>
+My approach:
+<describe your approach in 3–5 sentences>
+
+My code:
+```
+<paste your code here>
+```
+
+Please review:
+1. Correctness: ask me about edge cases before giving the answer.
+2. Complexity: ask me what I think the time and space complexity are, then correct me.
+3. Coding style: point out naming, control flow, and readability issues.
+4. Best practices: check mutation, side effects, overflow, index boundaries, null/None, and early returns.
+5. Interview communication: ask me for intuition, algorithm steps, complexity, and edge cases before rewriting my explanation.
+6. Pattern recognition: ask me which pattern this belongs to and what signals point to it before giving similar problems.
+7. Cheat book: provide a compact pattern cheat sheet and a generic code template, but do not fill in this exact problem.
+8. End with three improvement tasks: correctness, style, and pattern recognition.</textarea></div>
+    </section>
+
+    <section class="section" id="docs">
+      <div class="section-heading"><span class="tag">Documentation</span><h2>Common engineering documents</h2><p>Good engineers document product intent, design decisions, technical proposals, API contracts, and operational knowledge.</p></div>
+      <div class="doc-grid">
+        <article class="doc-card"><h3>PRD</h3><p>Defines the problem, users, goals, non-goals, requirements, and success metrics.</p></article>
+        <article class="doc-card"><h3>ADR</h3><p>Records an architecture decision, alternatives considered, and consequences.</p></article>
+        <article class="doc-card"><h3>Design Doc</h3><p>Explains the technical proposal, APIs, data model, trade-offs, rollout, risks, and open questions.</p></article>
+        <article class="doc-card"><h3>RFC</h3><p>Used to gather comments on cross-team or long-term technical proposals.</p></article>
+        <article class="doc-card"><h3>API / Technical Spec</h3><p>Defines endpoints, request/response schemas, auth, errors, rate limits, and examples.</p></article>
+        <article class="doc-card"><h3>Runbook / README</h3><p>Explains how to run, deploy, monitor, debug, roll back, and troubleshoot a service.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="further">
+      <div class="section-heading"><span class="tag">Further Study</span><h2>Topics not covered deeply in four weeks</h2><p>These topics are important but intentionally left for later study so the first month stays focused.</p></div>
+      <div class="uncovered-grid">
+        <article class="uncovered-card"><h3>Search systems</h3><p>Inverted indexes, ranking, query parsing, reindexing, and autocomplete.</p></article>
+        <article class="uncovered-card"><h3>Observability</h3><p>Metrics, logs, traces, SLOs, alerting, dashboards, and incident response.</p></article>
+        <article class="uncovered-card"><h3>Consensus and leader election</h3><p>Raft, Paxos, quorum reads/writes, and distributed coordination.</p></article>
+        <article class="uncovered-card"><h3>Microservices platform topics</h3><p>API gateways, service discovery, service mesh, circuit breakers, and service boundaries.</p></article>
+        <article class="uncovered-card"><h3>SQL tuning and index internals</h3><p>Query planners, B-trees, covering indexes, normalization, denormalization, and EXPLAIN.</p></article>
+        <article class="uncovered-card"><h3>Deployment and migration</h3><p>Canary rollout, blue-green deployment, feature flags, schema migration, and rollback plans.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>English version of the interview study site.</p><a href="/">繁體中文</a><a href="#top">Back to top ↑</a></footer>
+  <a class="language-toggle" href="/">繁中</a>
+</body>
+</html>
